@@ -27,7 +27,20 @@ Learn how to:
 - validate your DFH descriptor  
 - ship a compliant **Semantic Stack Root** in minutes
 
----
+- **TL;DR for implementers**
+
+1. Create `.well-known/stack` at your domain root.
+2. Paste a minimal DFH descriptor (see `docs/dfh-file.md#minimal-example`).
+3. Point `anchors.sitemap` at your real sitemap.
+4. Run `node tools/dfh-validator.js https://yourdomain.com`.
+5. Ship. Your domain is now a DFH Root for that topic.
+
+6. [![DFH Ready](https://img.shields.io/badge/DFH-Ready-brightgreen)]()
+[![Spec Version](https://img.shields.io/badge/Spec-1.0-blue)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
+
+npm install -g dfh-validator
+dfh-validate https://example.com
 
 ## The Semantic Stack & Deterministic First-Hop (DFH)
 
