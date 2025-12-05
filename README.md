@@ -1,8 +1,13 @@
-This repo is the official DFH v1.0 installation and deployment guide.
-For the conceptual definition of DFH, see: <link to your concept/root repo>.
-This is the modern implementation of Tim Berners original Semantic Web map.”
+# DFH v1.0 — Official Installation & Deployment Guide
 
-Here is the real semantic layer
+**This repo is the official DFH v1.0 installation and deployment guide.**  
+For the conceptual definition of DFH, see: <link to your concept/root repo>.
+
+*“This is the modern implementation of Tim Berners-Lee’s original Semantic Web map.”*
+
+---
+
+## Here is the real semantic layer
 
 
 
