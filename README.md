@@ -1,6 +1,6 @@
 # The DFH Semantic Grounding Installation Guide
  
-The official installation & deployment guide for DFH (Deterministic First-Hop) — the public semantic grounding layer for AI and search. Includes spec, examples, validator, and a one-command installer.
+The official installation & deployment guide for DFH (Deterministic First-Hop) — The public semantic grounding layer for AI and search. Includes spec, examples, validator, and a one-command installer.
 the public semantic grounding layer for AI and search.
 
 Learn how to:
