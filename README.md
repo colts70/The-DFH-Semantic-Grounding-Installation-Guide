@@ -1,4 +1,5 @@
 # The DFH Semantic Grounding Installation Guide
+This is the modern implementation of Berners-Lee’s original Semantic Web map.”
  
 The official installation & deployment guide for DFH (Deterministic First-Hop) — The public semantic grounding layer for AI and search. Includes spec, examples, validator, and a one-command installer.
 the public semantic grounding layer for AI and search.
