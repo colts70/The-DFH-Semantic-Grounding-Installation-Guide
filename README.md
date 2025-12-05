@@ -1,6 +1,12 @@
 # The DFH Semantic Grounding Installation Guide
 This is the modern implementation of Berners-Lee’s original Semantic Web map.”
 
+The Transport Layer (TCP/IP) → moves packets
+
+The Hyperlink Layer (HTTP/HTML) → shows documents
+
+The Meaning Layer (DFH/Stack) → tells AI what those documents mean
+
 
 The Transport Layer (TCP/IP) → moves packets
 
