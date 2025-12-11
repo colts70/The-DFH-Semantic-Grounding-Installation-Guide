@@ -479,6 +479,178 @@ Phase 4 — AI & search alignment
 
 Phase 5 — Extensions & v2.0
 
+5.2 Provenance Layer — Anchors 6–10 (DFH v1.0 Extension)
+
+Meaning Layer (Anchors 1–5) tells AI what the topic is.
+Provenance Layer (Anchors 6–10) tells AI who said it, when, how, and under what authority.
+
+The Provenance Layer eliminates ambiguity, strengthens trust, and allows DFH to function as a verifiable semantic root inside AI grounding pipelines.
+
+These five anchors are optional for minimal installs but recommended for every Root domain.
+
+### The Ten-Anchor Set (Full DFH Identity + Provenance Model)
+Layer	Anchors	Purpose
+Meaning Layer	1. type
+2. entity
+3. url
+4. sitemap
+5. canonical	Defines the what of the domain
+Provenance Layer	6. authority
+7. license
+8. modified
+9. issued
+10. signature	Defines the who, when, and legitimacy
+5.2.1 Anchor 6 — authority
+
+Declares who controls the topic root.
+
+Used by: AI systems, search engines, KG arbitration layers.
+
+Example (JSON):
+
+"authority": {
+  "name": "Water Semantic Root Foundation",
+  "url": "https://watersitemap.com",
+  "verifiedByDNS": true
+}
+
+
+Rules:
+
+Name must be human-readable.
+
+URL must be under your control.
+
+DNS verification MUST resolve to your Root.
+
+5.2.2 Anchor 7 — license
+
+Declares rights & re-use conditions for the semantic material.
+
+Example:
+
+"license": {
+  "spdx": "MIT",
+  "url": "https://watersitemap.com/license"
+}
+
+
+Rules:
+
+SPDX identifiers recommended (MIT, CC0, CC-BY, Apache-2.0).
+
+Used by search engines + AI for attribution logic.
+
+5.2.3 Anchor 8 — modified
+
+Timestamp of last semantic update to the Root.
+
+Example:
+
+"modified": "2025-12-11T08:15:00Z"
+
+
+Rules:
+
+MUST be ISO-8601.
+
+Drives freshness scoring in AI grounding pipelines.
+
+5.2.4 Anchor 9 — issued
+
+Declares when the Root identity was created.
+
+Example:
+
+"issued": "2025-11-23T00:00:00Z"
+
+
+Rules:
+
+Immutable after initial declaration.
+
+Used for provenance scoring and temporal ranking.
+
+5.2.5 Anchor 10 — signature
+
+Cryptographic signature proving authorship of the Root declaration.
+
+Example:
+
+"signature": {
+  "alg": "ed25519",
+  "publicKey": "https://watersitemap.com/key.pub",
+  "signedAt": "2025-12-11T08:15:00Z",
+  "value": "BASE64_SIGNATURE_HERE"
+}
+
+
+Rules:
+
+Optional today → required in DFH v2.0.
+
+Prevents impersonation or disputed topic claims.
+
+AI systems treat signed Roots as higher confidence.
+
+✅ FULL EXAMPLE — DFH Descriptor With All 10 Anchors
+
+(Drop this into examples/water/.well-known/stack to make it “full provenance correct.”)
+
+{
+  "@context": "https://schema.org",
+  "dfhVersion": "1.0",
+  "root": "https://watersitemap.com",
+
+  "anchors": {
+    "type": "https://watersitemap.com/type.json",
+    "entity": "https://watersitemap.com/entity.json",
+    "url": "https://watersitemap.com/url.json",
+    "sitemap": "https://watersitemap.com/sitemap.xml",
+    "canonical": "https://watersitemap.com/canonical.json",
+
+    "authority": {
+      "name": "Water Semantic Root Foundation",
+      "url": "https://watersitemap.com",
+      "verifiedByDNS": true
+    },
+
+    "license": {
+      "spdx": "MIT",
+      "url": "https://watersitemap.com/license"
+    },
+
+    "modified": "2025-12-11T08:15:00Z",
+    "issued": "2025-11-23T00:00:00Z",
+
+    "signature": {
+      "alg": "ed25519",
+      "publicKey": "https://watersitemap.com/key.pub",
+      "signedAt": "2025-12-11T08:15:00Z",
+      "value": "BASE64_SIGNATURE_HERE"
+    }
+  },
+
+  "mirrors": [
+    "https://watersites.com",
+    "https://industrialwatersitemap.com"
+  ]
+}
+
+✅ Sitemap Provenance Requirement (Add to your sitemap docs)
+
+Your sitemap must reflect the same provenance identity.
+
+Add this to the <urlset> header:
+
+<!-- DFH Provenance -->
+<dfh:root>https://watersitemap.com/.well-known/stack</dfh:root>
+<dfh:issued>2025-11-23T00:00:00Z</dfh:issued>
+<dfh:modified>2025-12-11T08:15:00Z</dfh:modified>
+
+
+This binds the sitemap to the Root declaration.
+
 14. License
 This project is licensed under the MIT License.
 See LICENSE for full text.
