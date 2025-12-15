@@ -60,8 +60,13 @@ For the full v1.0 spec, see: docs/spec.md.
 2. Repository Layout
 High-level structure:
 
-text
-Copy code
+├─ .well-known/
+│  └─ stack
+├─ ai.json
+├─ sitemap.xml
+├─ robots.txt
+├─ README.md
+
 DFH-Installation-Guide/
 ├── README.md           # This file: official install & deployment guide
 ├── LICENSE             # MIT license
